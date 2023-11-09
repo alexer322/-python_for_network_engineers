@@ -8,7 +8,7 @@ import random
 i = 0
 list = []
 
-while i < 10:
+while i < 10:        #генерим лист из 10 значений
 
     value = random.randint(1, 10)
     list.append(value)

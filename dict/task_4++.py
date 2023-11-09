@@ -1,3 +1,17 @@
+# Задание 4 Переделать скрипт из задания 3 таким образом, чтобы, при запросе параметра,
+# которого нет в словаре устройства, отображалось сообщение 'Такого параметра нет'.
+# Задание относится только к параметрам устройств, не к самим устройствам.
+# > Попробуйте набрать неправильное имя параметра или несуществующий параметр,
+# > чтобы увидеть какой будет результат. А затем выполняйте задание.
+# Если выбран существующий параметр, вывести информацию о соответствующем
+# параметре, указанного устройства.
+# Пример выполнения скрипта:
+# $ python task_5_1c.py
+# Введите имя устройства: r1
+# Введите имя параметра (ios, model, vendor, location, ip): ips
+# Такого параметра нет
+
+
 
 class MyDict(dict):
     def get(self, key, default=None):
@@ -34,21 +48,21 @@ london_co = {
 }
 
 
-device=(str(london_co.keys())).replace('[', '').replace(']', '').replace('dict_keys', '').replace("'", '')
+device = (str(london_co.keys())).replace('[', '').replace(']', '').replace('dict_keys', '').replace("'", '')
 
 # print(device)
-print("Введи имя устройства", (device), ": ")
-a=str(input())
+print(f"Введи имя устройства {device}: ")
+a = str(input())
 
 print("\n\n\n")
 
-parameter=(str((london_co.get(a)).keys())).replace('[', '').replace(']', '').replace('dict_keys', '').replace("'", '')
+parameter = (str((london_co.get(a)).keys())).replace('[', '').replace(']', '').replace('dict_keys', '').replace("'", '')
 # print(parameter)
 
-print("Введи параметр устройства", (parameter), ": ")
-b=str(input())
+print(f"Введи параметр устройства {parameter}: ")
+b = str(input())
 
-new_london_co=MyDict(london_co.get(a))
+new_london_co = MyDict(london_co.get(a))
 
 print(new_london_co.get(b))
 

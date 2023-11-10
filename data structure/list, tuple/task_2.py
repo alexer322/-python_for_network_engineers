@@ -15,7 +15,7 @@ while i < 10:
     list.append(value)
     i+=1
 
-print("сгенерированный лист {list}")
+print(f"сгенерированный лист {list}")
 
 new_list = []
 count = []

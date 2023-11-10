@@ -39,25 +39,16 @@ london_co = {
 }
 
 
-device = (str(london_co.keys())).replace('[', '').replace(']', '').replace('dict_keys', '').replace("'", '')
+# a = str(tuple(london_co.keys())).replace("'", '')
+# device = input(f"Введи имя устройства {a} : ")
 
-# print(device)
-print(f"Введи имя устройства {device} : ")
-a = str(input())
+# b = str(tuple(london_co.get(device).keys())).replace("'", '')
+# parameter = input(f"Введи параметр устройства {b} : ")
 
-print("\n\n\n")
+device = input(f"Введи имя устройства ({', '.join(london_co.keys())}) : ")
+device_param = london_co.get(device)
 
-parameter = (str((london_co.get(a)).keys())).replace('[', '').replace(']', '').replace('dict_keys', '').replace("'", '')
-# print(parameter)
+parameter = input(f"Введи параметр устройства ({', '.join(london_co.get(device).keys())}) : ")
+value = device_param.get(parameter, "Такого параметра нет")
 
-print(f"Введи параметр устройства {parameter} : ")
-b = str(input())
-
-param = (london_co.get(a))
-
-wr = (param.get(b))
-
-if wr == None:
-    print("Такого параметра нет")
-else:
-    print(wr)
+print(value)

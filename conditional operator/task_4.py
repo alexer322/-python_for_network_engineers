@@ -1,34 +1,25 @@
 # Напишите программу, которая определяет пройдет коробка с размерами a*b*c в
 # ящик с размерами x*y*z
 
-a = int(input("введи размер коробки - длина "))
-if (a > 0):
-    print("длина ящика", a)
+
+a = float(input("Введите длину коробки (a): "))     # Ввод размеров коробки
+b = float(input("Введите ширину коробки (b): "))
+c = float(input("Введите высоту коробки (c): "))
+
+
+x = float(input("Введите длину ящика (x): "))     # Ввод размеров ящика
+y = float(input("Введите ширину ящика (y): "))
+z = float(input("Введите высоту ящика (z): "))
+
+
+flag = False
+
+if  (a <= x and b <= y and c <= z) or (a <= y and b <= x and c <= z) or \
+    (a <= x and b <= z and c <= y) or (a <= z and b <= x and c <= y) or \
+    (a <= y and b <= z and c <= x) or (a <= z and b <= y and c <= x):
+    flag = True
+
+if flag:
+    print("Коробка проходит.")
 else:
-    exit()
-b = int(input("введи размер коробки - ширина "))
-if (b > 0):
-    print("ширина ящика", b)
-else:
-    exit()
-c = int(input("введи размер коробки - высота "))
-if (c > 0):
-    print("высота коробки", c)
-else:
-    exit()
-
-x = int(input("введи ширину двери "))
-y = int(input("введи высоту двери "))
-
-
-if ( a < x and b < y ) or ( a < y and b < x ):
-    print("Проходит")
-
-elif ( b < x and c < y ) or ( b < y and c < x):
-    print("Проходит")
-
-elif ( a < x and c < y ) or ( a < y and c < x):
-    print("Проходит")
-
-else:
-    print("Непроходит")
+    print("Коробка не проходит.")

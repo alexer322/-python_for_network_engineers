@@ -3,9 +3,10 @@
 # 20
 
 
+
+
 list = [10, 22, 4541, 12, 20, 222, 20]
 
-element_20 = list.index(20)
-list[element_20] = 200
 
+list[list.index(20)] = 200
 print(list)
